@@ -615,7 +615,7 @@ public class Camera2BasicFragment extends Fragment
             if (!mCameraOpenCloseLock.tryAcquire(2500, TimeUnit.MILLISECONDS)) {
                 throw new RuntimeException("Time out waiting to lock camera opening.");
             }
-            manager.openCamera("2", mStateCallback, mBackgroundHandler);
+            manager.openCamera(mCameraId, mStateCallback, mBackgroundHandler);
         } catch (CameraAccessException e) {
             e.printStackTrace();
         } catch (InterruptedException e) {
